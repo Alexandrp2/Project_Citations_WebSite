@@ -36,11 +36,11 @@ $(document).ready(function(){
 
   $("#buttonSearch").click(function(){
 
-    $("td").remove();
-    $("input:text").val("");
-
     let authorToSearch = $('#auteur').val();
     let stringToSearch = $('#chaineARechercher').val();
+
+    $("input:text").val("");
+    $("td").remove();
 
     // Author  AND NO  string
     if( (authorToSearch.length > 0) && (stringToSearch.length === 0 || stringToSearch === null))
