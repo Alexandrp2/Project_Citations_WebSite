@@ -22,36 +22,48 @@
 
   <h2 style="margin-top: 20px; margin-bottom: 20px;">Critères de recherche </h2>
 
-  <form class="row gy-2 gx-3 align-items-center">
-    <div class="col-3">
-      <label class="visually-hidden" for="auteur">auteur</label>
-      <input type="text" class="form-control" id="auteur" placeholder="Auteur">
+  <div class="row">
+    <div class="col">
+      <form class="row gy-2 gx-3 align-items-center">
+        <div class="col">
+          <label class="visually-hidden" for="auteur">auteur</label>
+          <input type="text" class="form-control" id="auteur" placeholder="Auteur">
+        </div>
+        <div class="col">
+          <label class="visually-hidden" for="chaineARechercher">chaine</label>
+          <div class="input-group">
+            <div class="input-group-text">@</div>
+            <input type="text" class="form-control" id="chaineARechercher" placeholder="Contenant le mot ...">
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="col-6">
-      <label class="visually-hidden" for="chaineARechercher">chaine</label>
-      <div class="input-group">
-        <div class="input-group-text">@</div>
-        <input type="text" class="form-control" id="chaineARechercher" placeholder="Contenant le mot ...">
-      </div>
+    <div class="col">
+      <button id="buttonSearch" class="btn btn-primary">Chercher</button>
     </div>
-    <div class="col-3">
-      <button type="submit" id="buttonSearch" class="btn btn-primary">Chercher</button>
-    </div>
-  </form>
+  </div>
 
   </br>
 
-  <ul id="trains"></ul>
+  <p id="searchMsg"></p>
 
-  <table id="tableTrains" class="table table-hover">
-  <tr>
-    <th>Id</th>
-    <th>Ville départ</th>
-    <th>Ville arrivée</th>
-  </tr>
+  <table id="tableCitations" class="table table-hover">
+    <tr>
+      <th>Citation</th>
+      <th>Auteur</th>
+      <th>Date</th>
+    </tr>
   </table>
 
-  <br>
+  </br>
+
+  <table id="tableCitationsRecherche" class="table table-hover">
+    <tr>
+      <th>Citation</th>
+      <th>Auteur</th>
+      <th>Date</th>
+    </tr>
+  </table>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->

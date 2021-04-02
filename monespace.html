@@ -37,13 +37,13 @@
   <!-- MENU DES DIFFERENTES OPTIONS DANS "MON ESPACE" -->
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link" id="ongletFavoris" aria-current="page">Mes favoris</a>
+      <a class="nav-link" id="ongletFavoris" aria-current="page">Mes citations favorites</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="ongletCitations">Liste des citations</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="ongletEtc">etc...</a>
+      <a class="nav-link" id="ongletEtc">Mes citations postées</a>
     </li>
   </ul>
 
@@ -78,19 +78,32 @@
   </div>
   </br>
 
+  <!-- SUPPRIMER UNE CITATION -->
+  <div class="d-flex flex-row justify-content-start" id="groupDeleteCitation">
+    <form class="container-fluid" id="formDeleteCitation">
+      <div class="input-group">
+        <span class="input-group-text">Supprimer une citation</span>
+        <input type="text" class="form-control" id="inputDeleteCitation" placeholder="Id de la citation à supprimer" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+    </form>
+    <button class="btn btn-outline-success" id="deleteCitation" type="submit">Supprimer</button>
+  </div>
+  </br>
 
-  <!-- LISTE DES FAVORIS -->
-  <table class="table table-hover" id="tableTrainsFavoris">
+
+  <!-- LISTE DES CITATIONS / FAVORIS -->
+  <table id="tableCitations" class="table table-hover">
     <tr>
       <th>Id</th>
-      <th>Ville départ</th>
-      <th>Ville arrivée</th>
+      <th>Citation</th>
+      <th>Auteur</th>
+      <th>Date</th>
     </tr>
   </table>
 
 
   <!-- TOAST AJOUT FAVORI OK -->
-  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" style="box-shadow: 10px 5px 5px #464750;">
+  <div class="toast" id="toastAjout" role="alert" aria-live="assertive" aria-atomic="true" style="box-shadow: 10px 5px 5px #464750;">
     <div class="toast-header">
       <strong class="me-auto">Info</strong>
       <small>Ajouté aux favoris</small>
@@ -98,6 +111,42 @@
     </div>
     <div class="toast-body">
       La citation a été ajoutée aux favoris.
+    </div>
+  </div>
+
+  <!-- TOAST DELETE FAVORI OK -->
+  <div class="toast" id="toastDeleteFavori" role="alert" aria-live="assertive" aria-atomic="true" style="box-shadow: 10px 5px 5px #464750;">
+    <div class="toast-header">
+      <strong class="me-auto">Info</strong>
+      <small>Supprimé des favoris</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      La citation a été supprimée des favoris.
+    </div>
+  </div>
+
+  <!-- TOAST DELETE CITATION OK -->
+  <div class="toast" id="toastDeleteCitation" role="alert" aria-live="assertive" aria-atomic="true" style="box-shadow: 10px 5px 5px #464750;">
+    <div class="toast-header">
+      <strong class="me-auto">Info</strong>
+      <small>Suppression de la citation</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Votre demande a été traitée.
+    </div>
+  </div>
+
+  <!-- TOAST MISSING ID -->
+  <div class="toast" id="toastMissiingId" role="alert" aria-live="assertive" aria-atomic="true" style="box-shadow: 10px 5px 5px #464750;position: center;">
+    <div class="toast-header">
+      <strong class="me-auto">Info</strong>
+      <small>Renseignez un ID</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Renseignez un ID.
     </div>
   </div>
 
