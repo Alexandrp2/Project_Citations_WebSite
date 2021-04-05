@@ -20,12 +20,16 @@ $(document).ready(function(){
     cache: false,
     success: function(citations) {
       $.each(citations, function(index, citation) {
-        let auteur;
-        let annee;
+        let auteur = citation.author;
+        let annee = citation.year;
         let citatio = citation.citation;
 
-        citation.author === null ? auteur='Inconnu' : auteur = citation.author;
-        citation.year === null ? annee="N/A" : annee = citation.year;
+        if (auteur === undefined  || auteur === null || auteur.length === 0 ) {
+          auteur='Inconnu';
+        }
+        if (annee === undefined  || annee === null || annee.length === 0 ) {
+          annee="N/A";
+        }
 
         $tableCitations.append('<tr><td>'+ citatio + '</td><td>'+ auteur +  '</td><td>'+ annee + '</td></tr>');
       });
@@ -65,12 +69,16 @@ $(document).ready(function(){
         data: JSON.stringify(jsonData),
         success: function(citations) {
           $.each(citations, function(index, citation) {
-            let auteur;
-            let annee;
+            let auteur = citation.author;
+            let annee = citation.year;
             let citatio = citation.citation;
 
-            citation.author === null ? auteur='Inconnu' : auteur = citation.author;
-            citation.year === null ? annee="N/A" : annee = citation.year;
+            if (auteur === undefined  || auteur === null || auteur.length === 0 ) {
+              auteur='Inconnu';
+            }
+            if (annee === undefined  || annee === null || annee.length === 0 ) {
+              annee="N/A";
+            }
 
             $tableCitationsRecherche.append('<tr><td>'+ citatio + '</td><td>'+ auteur +  '</td><td>'+ annee + '</td></tr>');
           });
@@ -102,12 +110,16 @@ $(document).ready(function(){
         data: JSON.stringify(jsonData),
         success: function(citations) {
           $.each(citations, function(index, citation) {
-            let auteur;
-            let annee;
+            let auteur = citation.author;
+            let annee = citation.year;
             let citatio = citation.citation;
 
-            citation.author === null ? auteur='Inconnu' : auteur = citation.author;
-            citation.year === null ? annee="N/A" : annee = citation.year;
+            if (auteur === undefined  || auteur === null || auteur.length === 0 ) {
+              auteur='Inconnu';
+            }
+            if (annee === undefined  || annee === null || annee.length === 0 ) {
+              annee="N/A";
+            }
 
             $tableCitationsRecherche.append('<tr><td>'+ citatio + '</td><td>'+ auteur +  '</td><td>'+ annee + '</td></tr>');
           });
@@ -141,12 +153,16 @@ $(document).ready(function(){
         data: JSON.stringify(jsonData),
         success: function(citations) {
           $.each(citations, function(index, citation) {
-            let auteur;
-            let annee;
+            let auteur = citation.author;
+            let annee = citation.year;
             let citatio = citation.citation;
 
-            citation.author === null ? auteur='Inconnu' : auteur = citation.author;
-            citation.year === null ? annee="N/A" : annee = citation.year;
+            if (auteur === undefined  || auteur === null || auteur.length === 0 ) {
+              auteur='Inconnu';
+            }
+            if (annee === undefined  || annee === null || annee.length === 0 ) {
+              annee="N/A";
+            }
 
             $tableCitationsRecherche.append('<tr><td>'+ citatio + '</td><td>'+ auteur +  '</td><td>'+ annee + '</td></tr>');
           });

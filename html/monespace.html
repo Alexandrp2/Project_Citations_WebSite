@@ -6,15 +6,15 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <!-- My CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 
 </head>
-<body class="container" style="background-color: #b4babb;">
+<body class="container">
 
   <!-- NAVBAR -->
   <nav class="nav nav-pills" style="background-color: #464750;">
-    <a class="nav-link" aria-current="page" style="color: #ffffff;" href="index.html">Citations</a>
+    <a class="nav-link" aria-current="page" style="color: #ffffff;" href="../index.html">Citations</a>
     <a class="nav-link active" style="color: #ffffff;" href="monespace.html">Mon espace</a>
     <a class="nav-link" style="color: #ffffff;" href="statistiques.html">Statistiques</a>
   </nav>
@@ -34,25 +34,26 @@
   </nav>
 
 
-  <!-- MENU DES DIFFERENTES OPTIONS DANS "MON ESPACE" -->
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" id="ongletFavoris" aria-current="page">Mes citations favorites</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="ongletCitations">Liste des citations</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="ongletEtc">Mes citations postées</a>
-    </li>
-  </ul>
-
-
   <!-- ETAT DE L'AUTHENTIFICATION / MESSAGE -->
   <h1 id="test" style="margin-top: 20px;">Mon espace</h1>
   <p id="loginNonActive">Vous n'êtes pas encore authentifié</p>
   <p id="loginActive"></p>
 
+  <!-- MENU DES DIFFERENTES OPTIONS DANS "MON ESPACE" -->
+  <ul class="nav nav-tabs" style="margin-bottom: 20px;">
+    <li class="nav-item">
+      <a class="nav-link" id="ongletCitations" style="color:#094a04;">Ajouter un favori</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="ongletFavoris" aria-current="page" style="color:#094a04;">Citations favorites</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="ongletCitationsPostees" style="color:#094a04;">Mes posts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="ongletNewCitation" style="color:#094a04;">Nouvelle citation</a>
+    </li>
+  </ul>
 
   <!-- AJOUTER AUX FAVORI -->
   <div class="d-flex flex-row justify-content-start" id="groupAddFavori">
@@ -92,7 +93,7 @@
 
 
   <!-- LISTE DES CITATIONS / FAVORIS -->
-  <table id="tableCitations" class="table table-hover">
+  <table id="tableCitations">
     <tr>
       <th>Id</th>
       <th>Citation</th>
@@ -100,6 +101,34 @@
       <th>Date</th>
     </tr>
   </table>
+
+  <!-- NOUVELLE CITATION -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend col-3">
+      <span class="input-group-text" id="auteurLabel">Auteur</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Auteur" id="auteurInput">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend col-3">
+      <span class="input-group-text" id="anneeLabel">Année</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Année de la citation" id="anneeInput">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend col-3">
+      <span class="input-group-text" id="nationaliteLabel">Nationalité</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Nationalité de l'auteur" id="nationaliteInput">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend col-3">
+      <span class="input-group-text" id="citationLabel" style="height: 70px;">Citation</span>
+    </div>
+    <textarea class="form-control" id="citationInput" aria-label="Citation" placeholder="Citation de l'auteur" style="height: 70px;"></textarea>
+  </div>
+  </br>
+  <button type="button" class="btn btn-primary" id="ButtonAddNewCitation">J'ajoute la citation</button>
 
 
   <!-- TOAST AJOUT FAVORI OK -->
@@ -151,12 +180,11 @@
   </div>
 
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   <!-- My JS -->
-  <script src="scriptMonespace.js"></script>
+  <script src="../js/scriptMonespace.js"></script>
      
 </body>
 </html>
