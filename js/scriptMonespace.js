@@ -1,4 +1,12 @@
+/*
+ * Comment of the following line if you use the distant Flask API (hosted in Azure)
+ */
 const _URL = 'http://localhost:5000/';
+
+/*
+ * Remove the comment of the following line if you use the distant Flask API (hosted in Azure)
+ */
+// const _URL = 'https://apicitations.azurewebsites.net/';
 
 let login = "";
 let $tableCitations = $('#tableCitations');
@@ -389,13 +397,14 @@ $(document).ready(function(){
             let nationalite =$formNewCitationInputNationalite.val();
             let citation =$formNewCitationInputCitation.val();
 
-            if(author.length === 0 && annee.length === 0 && nationalite.length === 0 && citation.length === 0){
-                alert("Renseignez au moins une citation");
+            if(citation.length === 0){
+                alert("La citation est obligatoire");
             } else {
-                author == null ? "null": author;
-                annee === null ? "null": annee;
-                nationalite.length === 0 ? "null": nationalite;
-                citation.length === 0 ? "null": citation;
+                //author === null ? "null": author;
+                //annee === null ? "null": annee;
+                //nationalite.length === 0 ? "null": nationalite;
+                //citation.length === 0 ? "null": citation;
+
                 // Send request
                 // CREATE A NEW CITATION
                 const jsonData = {
